@@ -1,6 +1,6 @@
 <h2>Products</h2>
 
-<div *ngFor="let myProduct of products">
+<div *ngFor="let myProduct of productsImp">
   <h3>
     <a [title]="myProduct.name + ' Details'">
       {{myProduct.name}}
@@ -12,6 +12,11 @@
   <button (click)="share()">
     Share
   </button>
+
+  <app-product-alerts 
+    [productADD]="myProduct"
+    (notify)="onNotify()">
+  </app-product-alerts>
 </div>
 
 
